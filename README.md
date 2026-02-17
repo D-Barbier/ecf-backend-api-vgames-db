@@ -44,13 +44,13 @@ La Gizmondo est une console de jeux vidéo portable faisant également office d'
         - Nom de la base de données : db_eval /Ok
         - Mot de passe root : rootpassword /Ok
 
-3. Créer et lancer le conteneur
+3. Créer et lancer le conteneur /Ok
 
-4. Se connecter au terminal du service web et installer symfony dans le répertoire /var/www/html.
+4. Se connecter au terminal du service web et installer symfony dans le répertoire /var/www/html. /ok
 
-5. Installer les dépendances et configurer api-platform (config/routes/api_platform.yml et config/packages/api_platform.yml). L'api ne doit gérer que le format JSON.
+5. Installer les dépendances et configurer api-platform (config/routes/api_platform.yml et config/packages/api_platform.yml). L'api ne doit gérer que le format JSON. /Ok
 
-Accéder à l'api à implémenter : [http://localhost:9005/](http://localhost:9005/) 
+Accéder à l'api à implémenter : [http://localhost:9005/](http://localhost:9005/) /Ok
 
 
 
