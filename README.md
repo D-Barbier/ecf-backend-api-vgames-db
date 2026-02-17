@@ -1,6 +1,6 @@
 # ecf-backend-api-vgames
 
-- Titre professionnel : Concepteur(trice) Développeur(euse) d'Application
+- Titre professionnel : Développeur et Web Mobile
 - J.O 2023
 - Durée de l'épreuve: 4 heures
 
@@ -8,7 +8,7 @@
 **Compétences évaluées :**
 - Installer et configurer son environnement de travail en fonction du projet
 - Développer des composants métier
-
+- Documenter le déploiement
 
 ## Contexte
 
@@ -34,51 +34,46 @@ La Gizmondo est une console de jeux vidéo portable faisant également office d'
 1. Faites un FORK de ce dépôt du votre compte Github.
     - `git clone https://github.com/ARFP/ecf-backend-api-vgames.git` 
 
-2. Cloner le dépôt en local et positionner vous dans le répertoire `symfony` avec votre terminal
+2. Cloner le dépôt en local.
 
-3. Installer les dépendances : `composer install`
+3. Editer le Dockerfile et le Docker-compose pour que la configuration respecte les conditions suivantes : 
+    - Le service web est accessible depuis le port 9005
+    - La base de données est accessible depuis le port 3308
+    - Config base de données :
+        - Nom d'utilisateur : eval
+        - Mot de passe : eval2503
+        - Nom de la base de données : db_eval
+        - Mot de passe root : rootpassword
 
-4. Mettre à jour les dépendances : `composer update`
+3. Créer et lancer le conteneur
 
-5. Démarrer le serveur web : `php -S localhost:3000 -t public`
+4. Se connecter au terminal du service web et installer symfony dans le répertoire /var/www/html.
 
-Accéder à l'api à implémenter : [http://localhost:3000/api/](http://localhost:3000/api/) 
+5. Installer les dépendances et configurer api-platform (config/routes/api_platform.yml et config/packages/api_platform.yml). L'api ne doit gérer que le format JSON.
 
-Accéder à la page web à analyser: [http://localhost:3000/gizmondo.html](http://localhost:3000/gizmondo.html)
+Accéder à l'api à implémenter : [http://localhost:9005/](http://localhost:9005/) 
+
 
 
 ## Travail à réaliser
 
-Dans le dossier public, vous trouverez une page web `gizmondo.html` qui liste les jeux de la console Gizmondo.
-
-Votre travail consiste à créer les entités de l'API qui permet de faire fonctionner la page web en créant l'api correspondante (les appels API sont dans `/public/assets/GizmondoRepository`).
-
-Vous ne devez, en aucun cas, modifier le code HTML, CSS ou JS présent dans le dossier `public`.
+Votre travail consiste à créer les entités de l'API correspondant au jeu de données fourni dans le dossier dataset.
 
 **2 entités sont attendues :** 
-- Gizmondo (Endpoint = `GET /api/gizmondos/`)
-- Publisher (Endpoints = `GET /api/publishers/` && ` GET /api/publishers/{id}`)
-
-Vous ne devez implémenter que les opérations `GET`.
-
-Les données du jeu d'essai sont disponibles sous forme d'insertions SQL dans le répertoire `_docs` du projet (faites correspondre vos entités avec la structure attendue).
+- Gizmondo (Endpoint = `GET /gizmondos/`)
+- Publisher (Endpoints = `GET /publishers/` 
 
 
 ### Ajouter un jeu Gizmondo
 
-Dans l'api, ajouter l'opération `POST` à l'entité Gizmondo permettant l'ajout d'un jeu non répertorié.
+Dans l'api, utiliser l'opération `POST` pour ajouter quelques jeux du jeu d'essai. Pensez à ajouter les "publisher" avant.
 
-L'opération doit échouer si l'une des conditions suivantes n'est pas respectée : 
 
-- Les noms du jeu et du développeur font plus de 5 caractères.
-- L'année est égale à l'une des valeur suivante : 2005, 2006, 2007, 2008
-- Le nom du jeu n'est pas encore répertorié
-- Le Publisher associé existe dans la base de données
 
 
 # Restitution 
 
-A la racine de votre dépôt créer un fichier `requirements.md` dans lequel vous listerez les logiciels et bibliothèques que vous avez utilisés pour développer, tester et livrer votre travail. Pour chacun d'entre eux, vous fournirez le lien vers la documentation officielle.
+A la racine de votre dépôt créer un fichier `requirements.md` dans lequel vous indiquerez la démarche que vous avez suivi.
 
 COMMIT + PUSH votre travail.
 
