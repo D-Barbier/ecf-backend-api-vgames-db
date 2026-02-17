@@ -1,0 +1,21 @@
+- Fork du dépôt 
+- Clone du dépôt 
+- Modification des fichiers 
+    - DockerFile
+    - Docker-compose.yml
+- Création et lancement conteneur
+    - docker compose up -d --build 
+- installation symfony + dépendances 
+    - composer create-project symfony/skeleton:"8.0.*" .
+    - composer require api 
+    - composer require symfony/maker-bundle --dev
+- configuration api-platform
+    - route : "#" prefix: /api
+    - packages : formats:json: ['application/json']
+- configuration .env pour la relation base de donnée
+- Creation entités + relation 
+    - php bin/console make:entity
+- creation migration
+    - php bin/console make:migration
+    - php bin/console doctrine:migrations:migrate
+- Ajout jeux d'essai
