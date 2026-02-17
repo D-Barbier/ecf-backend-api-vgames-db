@@ -31,18 +31,18 @@ La Gizmondo est une console de jeux vidéo portable faisant également office d'
 
 ## Préparation.
 
-1. Faites un FORK de ce dépôt du votre compte Github.
+1. Faites un FORK de ce dépôt du votre compte Github. /Ok
 
-2. Cloner le dépôt en local.
+2. Cloner le dépôt en local. /Ok
 
 3. Editer le Dockerfile et le Docker-compose pour que la configuration respecte les conditions suivantes : 
-    - Le service web est accessible depuis le port 9005
-    - La base de données est accessible depuis le port 3308
+    - Le service web est accessible depuis le port 9005 /OK
+    - La base de données est accessible depuis le port 3308 /Ok
     - Config base de données :
-        - Nom d'utilisateur : eval
-        - Mot de passe : eval2503
-        - Nom de la base de données : db_eval
-        - Mot de passe root : rootpassword
+        - Nom d'utilisateur : eval /Ok
+        - Mot de passe : eval2503 /Ok
+        - Nom de la base de données : db_eval /Ok
+        - Mot de passe root : rootpassword /Ok
 
 3. Créer et lancer le conteneur
 
